@@ -12,3 +12,7 @@
 4. `npm install -g webpack`
   1. `npm install --save babel-loader`
   2. `webpack -d -w`
+
+*Questions
+1. Prerender does not work for now...
+  1. Answer is that webpack and react_component two different approaches - use one or other.
