@@ -1,0 +1,2 @@
+rails: rails s -p 4000
+webpack: webpack -d -w webpack.config.js

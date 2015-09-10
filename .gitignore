@@ -15,3 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+#Ignore webpack generated javascript
+/app/assets/javascripts/components/*
