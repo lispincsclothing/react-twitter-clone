@@ -1,3 +1,5 @@
+import Greet from './greet';
+
 class Main extends React.Component {
   render() {
     return (
@@ -6,11 +8,11 @@ class Main extends React.Component {
   }
 }
 
-// let documentReady = () => {
-//   React.render(
-//       <Main />,
-//       document.getElementById('react')
-//   );
-// };
-//
-// $(documentReady);
+let documentReady = () => {
+  React.render(
+      <Main />,
+      document.getElementById('react')
+  );
+};
+
+$(documentReady);
