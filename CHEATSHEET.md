@@ -16,3 +16,5 @@
 *Questions
 1. Prerender does not work for now...
   1. Answer is that webpack and react_component two different approaches - use one or other.
+2. Where to put node compenents (e.g. faker, etc.).  Is the package.json file best, where else?
+3. 

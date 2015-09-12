@@ -1,16 +1,11 @@
 import Tweet from "./Tweet"
 
-let mockTweets = [
-  {name:"Wookie", }
-];
-
 export default class TweetsList extends React.Component {
   render() {
+    let tweets = this.props.tweets.map(tweet => <Tweet {...tweet} />)
     return (
        <ul className="collection">
-         <Tweet />
-         <Tweet />
-         <Tweet />
+         {tweets}
        </ul>
     );
   }
