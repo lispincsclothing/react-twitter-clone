@@ -6,7 +6,7 @@ var faker = require('faker');
 let numofmockTweets = 10;
 let mockTweets = [];
 for (var i = 0; i < numofmockTweets; i++) {
-  mockTweets.push({key: i, name: faker.name.findName(), body: faker.hacker.phrase()});
+  mockTweets.push({id: i, name: faker.name.findName(), body: faker.hacker.phrase()});
 }
 
 class Main extends React.Component {
