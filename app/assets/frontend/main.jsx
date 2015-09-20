@@ -1,20 +1,28 @@
 import TweetBox from "./components/TweetBox"
 import TweetsList from "./components/TweetsList"
 
-var faker = require('faker');
 
 let numofmockTweets = 10;
 let mockTweets = [];
-for (var i = 0; i < numofmockTweets; i++) {
-  mockTweets.push({id: i, name: faker.name.findName(), body: faker.hacker.phrase()});
-}
 
 class Main extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = { tweetsList: mockTweets };
+  }
+
+  addTweet(tweetToAdd) {
+    let newTweetsList = this.state.tweetsList;
+    newTweetsList.unshift({id: Date.now(), name: 'Guest', body: tweetToAdd});
+
+    this.setState({tweetsList: newTweetsList});
+  }
+
   render() {
     return (
       <div className="container">
-        <TweetBox />
-        <TweetsList tweets={mockTweets} />
+        <TweetBox sendTweet={this.addTweet.bind(this)}/>
+        <TweetsList tweets={this.state.tweetsList} />
       </div>
     );
   }

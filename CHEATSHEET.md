@@ -1,3 +1,4 @@
+# Cheatsheet
 1. `rails new . -D=postgresql -T --skip-turblolinks`
   1. N.B. installed rails 4.2, tutorial uses 5.0 alpha
   2. Q. Installing latest version of rails via github froze, why?
@@ -13,8 +14,14 @@
   1. `npm install --save babel-loader`
   2. `webpack -d -w`
 
-*Questions
+# Questions
 1. Prerender does not work for now...
   1. Answer is that webpack and react_component two different approaches - use one or other.
 2. Where to put node compenents (e.g. faker, etc.).  Is the package.json file best, where else?
-3. 
+3. Why does 'React.findDOMNode(node)' return a plaintext dom element, rather than a reference to dom element?
+
+# Notes
+1. For forms, `ref` is way of getting input (can't use name/value etc in forms).  
+  1. http://facebook.github.io/react/docs/working-with-the-browser.html#refs-and-getdomnode
+2. Using `.bind(this)` to make sure `this` bound to correct object
+  1. http://stackoverflow.com/questions/24285581/purpose-of-bindthis-at-end-of-ajax-callback
