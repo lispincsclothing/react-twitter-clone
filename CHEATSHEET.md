@@ -15,6 +15,13 @@
   2. `webpack -d -w`
 5. `be foreman start -f Procfile.dev`
 6. `rails g devise:install`
+  1. `rails g devise User`
+  2. `rake db:migrate`
+  3. `rails g migration add_name_to_users`
+    1. `rake db:migrate`
+  
+
+
 
 # Questions
 1. Prerender does not work for now...
