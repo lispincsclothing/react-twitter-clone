@@ -13,6 +13,8 @@
 4. `npm install -g webpack`
   1. `npm install --save babel-loader`
   2. `webpack -d -w`
+5. `be foreman start -f Procfile.dev`
+6. `rails g devise:install`
 
 # Questions
 1. Prerender does not work for now...
