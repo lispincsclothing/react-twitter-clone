@@ -17,9 +17,10 @@
 6. `rails g devise:install`
   1. `rails g devise User`
   2. `rake db:migrate`
-  3. `rails g migration add_name_to_users`
-    1. `rake db:migrate`
-  
+7. `rails g migration add_name_to_users`
+  1. `rake db:migrate`
+8. `rails g resource tweet` #Middle ground between model and scaffold - generates model and controller, and gives route
+9. 
 
 
 
