@@ -20,7 +20,10 @@
 7. `rails g migration add_name_to_users`
   1. `rake db:migrate`
 8. `rails g resource tweet` #Middle ground between model and scaffold - generates model and controller, and gives route
-9. 
+  1. `rake db:migrate`
+  2. In Tweet model, used eager loading with .includes to avoid N+1 problem
+    1. http://stackoverflow.com/questions/31149850/rails-includes-method-and-avoiding-n1-query
+
 
 
 
@@ -29,7 +32,8 @@
   1. Answer is that webpack and react_component two different approaches - use one or other.
 2. Where to put node compenents (e.g. faker, etc.).  Is the package.json file best, where else?
 3. Why does 'React.findDOMNode(node)' return a plaintext dom element, rather than a reference to dom element?
-
+4. Does the includes in Tweet really avoid n+1 problem?
+b
 # Notes
 1. For forms, `ref` is way of getting input (can't use name/value etc in forms).  
   1. http://facebook.github.io/react/docs/working-with-the-browser.html#refs-and-getdomnode
