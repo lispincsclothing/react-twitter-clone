@@ -4,10 +4,21 @@ import TweetsList from "./components/TweetsList"
 let numofmockTweets = 10;
 let mockTweets = [];
 
-class Main extends React.Component {constructor(props) {
+class Main extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
       tweetsList: mockTweets
+    };
+  }
+
+  formattedTweets(tweetsList){
+    let formattedList = tweetsList.map(tweet => {
+      tweet.formattedDate = moment(tweet.created_at).fromNow();
+      return tweet;
+    });
+    return {
+      tweetsList: formattedList
     };
   }
 
@@ -22,7 +33,7 @@ class Main extends React.Component {constructor(props) {
       let newTweetsList = this.state.tweetsList;
       newTweetsList.unshift(savedTweet);
       this.setState({
-        tweetsList: newTweetsList
+        tweetsList: formattedTweets(newTweetsList)
       });
     }).fail(error => {
       console.log('error');
@@ -32,12 +43,9 @@ class Main extends React.Component {constructor(props) {
   componentDidMount() {
     $.ajax({
       url: '/tweets',
-      dataType: 'json'
-    }).done(data => this.setState({
-      tweetsList: data
-    })).fail(function() {
-      console.log("error");
-    });
+      dataType: 'json'})
+    .success(data => this.setState(this.formattedTweets(data)))
+    .fail(error  => console.log(error));
   }
 
   render() {

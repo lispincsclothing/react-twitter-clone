@@ -8,6 +8,7 @@
       <!-- Compiled and minified CSS -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
       <!-- Compiled and minified JavaScript -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
       <%= csrf_meta_tags %>
 </head>
@@ -15,7 +16,7 @@
 <body>
   <div class="right">
     <% if user_signed_in? %>
-     Welcome <%= link_to current_user.display_name, profile_path %>, 
+     Welcome <%= link_to current_user.display_name, profile_path %>,
      <%= link_to "logout", destroy_user_session_path, method: 'DELETE' %>
     <% else %>
      Please
