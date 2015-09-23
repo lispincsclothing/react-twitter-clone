@@ -23,7 +23,8 @@
   1. `rake db:migrate`
   2. In Tweet model, used eager loading with .includes to avoid N+1 problem
     1. http://stackoverflow.com/questions/31149850/rails-includes-method-and-avoiding-n1-query
-
+9. `npm install --save flux events`
+10. 
 
 
 
