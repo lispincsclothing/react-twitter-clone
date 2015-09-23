@@ -1,7 +1,9 @@
-import TweetBox from "./components/TweetBox"
-import TweetsList from "./components/TweetsList"
+import TweetBox from "./components/TweetBox";
+import TweetsList from "./components/TweetsList";
+import TweetActions from "./actions/TweetActions";
 
-let numofmockTweets = 10;
+TweetActions.getAllTweets();
+
 let mockTweets = [];
 
 class Main extends React.Component {
@@ -12,40 +14,40 @@ class Main extends React.Component {
     };
   }
 
-  formattedTweets(tweetsList){
-    let formattedList = tweetsList.map(tweet => {
-      tweet.formattedDate = moment(tweet.created_at).fromNow();
-      return tweet;
-    });
-    return {
-      tweetsList: formattedList
-    };
-  }
+  // formattedTweets(tweetsList){
+  //   let formattedList = tweetsList.map(tweet => {
+  //     tweet.formattedDate = moment(tweet.created_at).fromNow();
+  //     return tweet;
+  //   });
+  //   return {
+  //     tweetsList: formattedList
+  //   };
+  // }
 
   addTweet(tweetToAdd) {
-    $.ajax({
-      url: '/tweets',
-      type: 'POST',
-      dataType: 'json',
-      data: { body: tweetToAdd }
-    }).success(savedTweet => {
-      console.log("success");
-      let newTweetsList = this.state.tweetsList;
-      newTweetsList.unshift(savedTweet);
-      this.setState({
-        tweetsList: formattedTweets(newTweetsList)
-      });
-    }).fail(error => {
-      console.log('error');
-    });
+    // $.ajax({
+    //   url: '/tweets',
+    //   type: 'POST',
+    //   dataType: 'json',
+    //   data: { body: tweetToAdd }
+    // }).success(savedTweet => {
+    //   console.log("success");
+    //   let newTweetsList = this.state.tweetsList;
+    //   newTweetsList.unshift(savedTweet);
+    //   this.setState({
+    //     tweetsList: formattedTweets(newTweetsList)
+    //   });
+    // }).fail(error => {
+    //   console.log('error');
+    // });
   }
 
   componentDidMount() {
-    $.ajax({
-      url: '/tweets',
-      dataType: 'json'})
-    .success(data => this.setState(this.formattedTweets(data)))
-    .fail(error  => console.log(error));
+    // $.ajax({
+    //   url: '/tweets',
+    //   dataType: 'json'})
+    // .success(data => this.setState(this.formattedTweets(data)))
+    // .fail(error  => console.log(error));
   }
 
   render() {

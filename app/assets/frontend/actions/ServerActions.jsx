@@ -1,11 +1,11 @@
 import AppDispatcher from "../dispatcher"
 import ActionTypes from "../constants"
 
-export default{
+export default {
   receivedTweets(rawTweets){
-    AppDispatcher.dispatch(
+    AppDispatcher.dispatch({
       actionType: ActionTypes.RECEIVED_TWEETS,
       rawTweets
-    )
+    })
   }
 }
