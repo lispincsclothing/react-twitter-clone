@@ -16,29 +16,11 @@ class Main extends React.Component {
     this._onChange = this._onChange.bind(this);
   }
 
-  addTweet(tweetToAdd) {
-    // $.ajax({
-    //   url: '/tweets',
-    //   type: 'POST',
-    //   dataType: 'json',
-    //   data: { body: tweetToAdd }
-    // }).success(savedTweet => {
-    //   console.log("success");
-    //   let newTweetsList = this.state.tweetsList;
-    //   newTweetsList.unshift(savedTweet);
-    //   this.setState({
-    //     tweetsList: formattedTweets(newTweetsList)
-    //   });
-    // }).fail(error => {
-    //   console.log('error');
-    // });
-  }
-
   componentDidMount() {
-    TweetStore.addChangeListener(this._onChange)
+    TweetStore.addChangeListener(this._onChange);
   }
   componentWillUnMount(){
-    TweetStore.removeChangeListener(this._onChange)
+    TweetStore.removeChangeListener(this._onChange);
   }
   _onChange(){
     console.log(5, "Main._onChange");
@@ -48,7 +30,7 @@ class Main extends React.Component {
   render() {
     return (
       <div className="container">
-        <TweetBox sendTweet={this.addTweet.bind(this)}/>
+        <TweetBox />
         <TweetsList tweets={this.state.tweetsList}/>
       </div>
     );
